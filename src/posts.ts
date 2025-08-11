@@ -1,5 +1,3 @@
-// Importiert nur den Typ "Post" aus der Datei postTypes.ts
-// Das "import type" sorgt dafür, dass nur Typinformationen geladen werden (kein JavaScript zur Laufzeit)
 import type { Post } from "./postTypes";
 
 // Erstellt und exportiert ein Array "POSTS", das eine Liste von Blogeinträgen enthält

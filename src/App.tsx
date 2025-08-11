@@ -20,7 +20,6 @@ export default function App() {
                     <li>Contact</li>
                 </ul>
             </header>
-
             {/* Hauptbereich mit allen Blogbeiträgen */}
             <main>
                 {/* Geht alle Einträge in POSTS durch und gibt für jeden einen PostComponent aus */}
