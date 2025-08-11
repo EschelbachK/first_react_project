@@ -13,10 +13,7 @@ export default function App() {
         <>
             {/* Kopfbereich der Seite */}
             <header>
-                {/* Hauptüberschrift des Blogs */}
                 <h1>Mein Interessen-Blog</h1>
-
-                {/* Navigation mit drei Menüpunkten */}
                 <ul>
                     <li>Home</li>
                     <li>About</li>
@@ -27,10 +24,8 @@ export default function App() {
             {/* Hauptbereich mit allen Blogbeiträgen */}
             <main>
                 {/* Geht alle Einträge in POSTS durch und gibt für jeden einen PostComponent aus */}
-                {POSTS.map(post => (
-                    // Einzelner Blogbeitrag; key sorgt dafür, dass React ihn eindeutig erkennt
-                    <PostComponent key={post.id} post={post} />
-                ))}
+                {/* Einzelner Blogbeitrag; key sorgt dafür, dass React ihn eindeutig erkennt*/}
+                {POSTS.map(post => <PostComponent key={post.id} post={post} />)}
             </main>
         </>
     );
