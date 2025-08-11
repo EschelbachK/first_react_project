@@ -1,8 +1,5 @@
-// Importiert den Typ "BlogPost" für die Typisierung der Props
 import type { BlogPost } from "./BlogPostTypes";
 
-// Definiert die BlogPost-Komponente, die einen einzelnen Blogbeitrag darstellt
-// Sie erhält die Eigenschaften eines BlogPosts als Props
 export default function BlogPost({
                                      title,
                                      subtitle,
@@ -14,49 +11,31 @@ export default function BlogPost({
                                      likes,
                                  }: BlogPost) {
     return (
-        // Artikel-Element für semantische Abgrenzung eines Blogbeitrags
         <article className="card">
-
-            {/* Wenn ein Bild vorhanden ist, wird es angezeigt */}
             {image && (
                 <img
-                    src={image} // Bildquelle
-                    alt={title} // Alternativtext fürs Bild
-                    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }} // Styling direkt im Code
+                    src={image}
+                    alt={title}
+                    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
                 />
             )}
-
-            {/* Titel des Blogposts */}
             <h2>{title}</h2>
-
-            {/* Untertitel mit etwas dezentem Styling */}
             <h4 style={{ color: "#666", fontWeight: "normal" }}>{subtitle}</h4>
-
-            {/* Datum, falls vorhanden, formatiert als lokales Datum */}
             <p>
                 <small>{date ? new Date(date).toLocaleDateString() : ""}</small>
             </p>
-
-            {/* Hauptinhalt des Blogposts */}
             <p>{content}</p>
-
-            {/* Autor des Beitrags */}
             <p><strong>Autor:</strong> {author}</p>
-
-            {/* Falls Tags vorhanden sind, werden sie angezeigt */}
             {tags && (
                 <p>
                     Tags:{" "}
                     {tags.map((tag) => (
-                        // Jeder Tag bekommt einen eigenen Span mit kleinem Abstand rechts
                         <span key={tag} style={{ marginRight: "0.5rem" }}>
-                            #{tag}
-                        </span>
+              #{tag}
+            </span>
                     ))}
                 </p>
             )}
-
-            {/* Wenn Likes vorhanden sind (auch 0 ist erlaubt), werden sie angezeigt */}
             {likes !== undefined && <p>👍 Likes: {likes}</p>}
         </article>
     );
